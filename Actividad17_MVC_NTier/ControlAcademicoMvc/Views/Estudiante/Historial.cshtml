@@ -1,0 +1,32 @@
+@model ControlAcademicoMvc.Models.Estudiante
+
+@{
+    ViewData["Title"] = "Historial del Estudiante";
+}
+
+<h1>Historial del Estudiante</h1>
+
+<div class="card">
+    <div class="card-header">
+        Información Académica
+    </div>
+
+    <div class="card-body">
+        <p><strong>Carné:</strong> @Model.Carne</p>
+        <p><strong>Nombre:</strong> @Model.Nombre</p>
+        <p><strong>Promedio:</strong> @Model.Promedio</p>
+
+        @if (Model.Promedio >= 61)
+        {
+            <p class="text-success"><strong>Estado:</strong> Aprobado</p>
+        }
+        else
+        {
+            <p class="text-danger"><strong>Estado:</strong> Reprobado</p>
+        }
+
+        <a class="btn btn-secondary" href="/Estudiante/Listar">
+            Regresar al listado
+        </a>
+    </div>
+</div>
